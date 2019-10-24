@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "target": "es6",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmitOnError": true,
+    "baseUrl": ".",
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "jsx": "react",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "./typings/*"
+      ]
+    },
+    "typeRoots": [
+      "./typings",
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "typings", "app/components/NavBar/index.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "./**/*.js"
+  ]
+}

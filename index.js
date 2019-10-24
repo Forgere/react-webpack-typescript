@@ -1,10 +1,11 @@
-import * as React from 'react'
-import { render } from 'react-dom'
-import App from './app/layouts/app'
+import * as React from 'react';
+import { render } from 'react-dom';
 
-import './app/style.less'
+import App from './app/layouts/App';
 
-const root = document.createElement('div')
-document.body.appendChild(root)
+import './app/style.less';
 
-render(<App />, root)
+const root = document.createElement('div');
+document.body.appendChild(root);
+
+render(<App />, root);

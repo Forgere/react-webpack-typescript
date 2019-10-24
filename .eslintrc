@@ -21,9 +21,6 @@
         "import/resolver": {
           "node": {
             "extensions": [".js", ".jsx"]
-          },
-          "browser": {
-            "extensions": [".js", ".jsx"] 
           }
         }
     }

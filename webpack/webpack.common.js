@@ -13,9 +13,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../index.html'),
-    }),
+    new HtmlWebpackPlugin(),
+    // new HtmlWebpackPlugin({
+    //   template: path.resolve(__dirname, '../index.html'),
+    // }),
   ],
   optimization: {
     splitChunks: {
@@ -31,7 +32,8 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', 'ts', 'tsx', '.js', '.jsx'],
+    alias: { 'react-dom': '@hot-loader/react-dom' },
   },
   module: {
     rules: [
@@ -60,6 +62,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(tsx|ts)?$/,
+        loader: 'ts-loader',
       },
     ],
   },

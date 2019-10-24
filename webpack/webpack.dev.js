@@ -7,11 +7,11 @@ module.exports = merge(common, {
   // 模块热更新
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     contentBase: '../dist',
     // 模块热更新
-    hot: true
-  }
+    hot: true,
+  },
 });
