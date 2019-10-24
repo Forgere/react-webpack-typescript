@@ -53,12 +53,6 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif|JPG)$/,
-        use: [
-          'file-loader',
-        ],
-      },
-      {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/,
@@ -66,6 +60,12 @@ module.exports = {
       {
         test: /\.(tsx|ts)?$/,
         loader: 'ts-loader',
+      },
+      {
+        test: /\.(png|svg|jpg|gif|JPG)$/,
+        use: [
+          'file-loader',
+        ],
       },
     ],
   },

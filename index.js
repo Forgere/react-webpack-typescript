@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import App from './app/layouts/App';
 
-import './app/style.less';
+require('./app/style.less');
 
 const root = document.createElement('div');
 document.body.appendChild(root);
