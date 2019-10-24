@@ -4,11 +4,8 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    // entry: {
-    //     app: path.resolve(__dirname, '../src/index.js')
-    // },
     entry: {
-        app: path.resolve(__dirname, '../src/index.js'),
+        app: path.resolve(__dirname, '../index.js'),
         // 重用库，分离
         // vendor: [
         //     'react',
@@ -34,6 +31,9 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, '../dist')
     },
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    },
     module: {
         rules: [
             {
@@ -50,7 +50,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 use: 'babel-loader',
                 exclude: /node_modules/
             }
