@@ -10,7 +10,7 @@ import { NavBarR } from '../components/NavBar/NavBar';
 const nav: React.ReactNode = (
   <NavBarR mode="horizontal" array={[
     {
-      url: '/home',
+      url: '/',
       name: 'home',
     },
     {
