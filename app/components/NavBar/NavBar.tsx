@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {Menu, Input} from 'antd';
+import {Menu} from 'antd';
+import { Link } from 'react-router-dom';
 
 const {SubMenu} = Menu;
 
@@ -13,8 +14,9 @@ export class MenuNode{
 }
 
 interface IProps{
-  click: (params: any) => void;
+  click?: (params: any) => void;
   array?: MenuNode[];
+  mode?: "vertical-right"|"horizontal"|"inline"|"vertical-left"|"vertical";
 }
 
 interface IState{
@@ -22,19 +24,43 @@ interface IState{
 }
 
 export class NavBar extends React.Component<IProps, IState>{
+
+  state={
+    current: ''
+  }
+
+  componentDidMount(){
+    console.log(window.location.pathname)
+    this.setState({
+      current: window.location.pathname
+    })
+  }
+
+  loop(array: MenuNode[]): React.ReactNode[]{
+    return array.map(item => {
+      return (
+          item.children && item.children.length > 0
+          ?
+          <SubMenu title={item.name} key={item.url}>
+            {this.loop(item.children)}
+          </SubMenu> 
+          :
+          <Menu.Item key={item.url}>
+            <Link to={item.url}>{item.name}</Link>
+          </Menu.Item>
+      )
+    })
+  }
+
   render() {
+    const {array, mode} = this.props;
     return (
-      <Menu onClick={this.props.click}>
-        <Menu.Item key="1">
-          home1
-        </Menu.Item>
-        <Menu.Item key="2">
-          about2
-        </Menu.Item>
-        <Menu.Item key="3">
-          inbox3
-          <Input placeholder="Basic usage" />
-        </Menu.Item>
+      <Menu onClick={(param) => {
+        this.setState({
+          current: param.key
+        })
+      }} mode={mode} selectedKeys={[this.state.current]}>
+        {array && this.loop(array)}
       </Menu>
     );
   }

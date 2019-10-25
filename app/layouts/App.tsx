@@ -7,12 +7,39 @@ import {
 
 import { NavBar } from '../components/NavBar/NavBar';
 
+const nav: React.ReactNode = (
+  <NavBar mode="horizontal" array={[
+    {
+      url: '/home',
+      name: 'home',
+    },
+    {
+      url: '/about',
+      name: 'about',
+    },
+    {
+      url: '/inbox',
+      name: 'inbox',
+    },
+    {
+      url: '/message',
+      name: 'message',
+      children: [
+        {
+          url: '/message/a',
+          name: 'messagea',
+        },
+        {
+          url: '/message/b',
+          name: 'messageb',
+        },
+      ]
+    },
+  ]}/>
+)
+
 const App = () => (
   <div>
-    <NavBar click={(a) => {
-      console.log(a);
-    }}
-    />
     Welcome to your App
     <Button type="primary">12</Button>
     <Input placeholder="Basic usage" />
@@ -57,12 +84,7 @@ class Message extends React.Component {
 
 const app = () => (
   <BrowserRouter>
-    <Button>2</Button>
-    <div>
-      <Link to="/about">about </Link>
-      <Link to="/inbox">inbox </Link>
-      <Link to="/message">message </Link>
-    </div>
+    {nav}
     <Switch>
       <Route path="/" component={App} exact />
       <Route path="/about" component={About} />
