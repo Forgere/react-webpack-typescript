@@ -13,8 +13,8 @@ export class MenuNode{
 }
 
 interface IProps{
-  click: () => void;
-  array: MenuNode[];
+  click: (params: any) => void;
+  array?: MenuNode[];
 }
 
 interface IState{
@@ -26,13 +26,13 @@ export class NavBar extends React.Component<IProps, IState>{
     return (
       <Menu onClick={this.props.click}>
         <Menu.Item key="1">
-          home
+          home1
         </Menu.Item>
         <Menu.Item key="2">
-          about
+          about2
         </Menu.Item>
         <Menu.Item key="3">
-          inbox
+          inbox3
           <Input placeholder="Basic usage" />
         </Menu.Item>
       </Menu>

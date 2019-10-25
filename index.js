@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 
 import { AppContainer } from 'react-hot-loader';
-import App from './app/layouts/App';
+import App from './app/layouts/App.tsx';
 
 require('./app/style.less');
 

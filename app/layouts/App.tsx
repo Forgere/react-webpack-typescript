@@ -1,17 +1,18 @@
 import * as React from 'react';
-import {Button, Input} from 'antd';
+import { Button, Input } from 'antd';
 
 import {
   BrowserRouter, Route, Link, Switch,
 } from 'react-router-dom';
 
-import NavBar from '../components/NavBar'
+import { NavBar } from '../components/NavBar/NavBar';
 
 const App = () => (
   <div>
     <NavBar click={(a) => {
-      console.log(a)
-    }}/>
+      console.log(a);
+    }}
+    />
     Welcome to your App
     <Button type="primary">12</Button>
     <Input placeholder="Basic usage" />
