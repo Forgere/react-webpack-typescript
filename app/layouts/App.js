@@ -1,15 +1,20 @@
 import * as React from 'react';
-import {Button} from 'antd';
+import {Button, Input} from 'antd';
 
 import {
   BrowserRouter, Route, Link, Switch,
 } from 'react-router-dom';
 
+import NavBar from '../components/NavBar'
+
 const App = () => (
   <div>
-    <h2>App123</h2>
+    <NavBar click={(a) => {
+      console.log(a)
+    }}/>
     Welcome to your App
     <Button type="primary">12</Button>
+    <Input placeholder="Basic usage" />
   </div>
 );
 
