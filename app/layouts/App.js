@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Button from 'antd/es/button';
 
-import { hot } from 'react-hot-loader/root';
 import {
   BrowserRouter, Route, Link, Switch,
 } from 'react-router-dom';
@@ -9,8 +8,8 @@ import {
 const App = () => (
   <div>
     <h2>App</h2>
-    Welcome to your App1222
-    <Button type="danger">1</Button>
+    Welcome to your App
+    <Button type="primary">1</Button>
   </div>
 );
 
@@ -67,4 +66,4 @@ const app = () => (
   </BrowserRouter>
 );
 
-export default hot(app);
+export default app;

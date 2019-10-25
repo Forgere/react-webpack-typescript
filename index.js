@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 
+import { AppContainer } from 'react-hot-loader';
 import App from './app/layouts/App';
 
 require('./app/style.less');
@@ -8,4 +9,19 @@ require('./app/style.less');
 const root = document.createElement('div');
 document.body.appendChild(root);
 
-render(<App />, root);
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    root,
+  );
+};
+
+render(App, root);
+
+if (module.hot) {
+  module.hot.accept('./app/layouts/App', () => {
+    render(App);
+  });
+}
