@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from 'antd/es/button';
+import {Button} from 'antd';
 
 import {
   BrowserRouter, Route, Link, Switch,
@@ -7,9 +7,9 @@ import {
 
 const App = () => (
   <div>
-    <h2>App</h2>
+    <h2>App123</h2>
     Welcome to your App
-    <Button type="primary">1</Button>
+    <Button type="primary">12</Button>
   </div>
 );
 
