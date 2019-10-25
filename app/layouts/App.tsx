@@ -5,10 +5,10 @@ import {
   BrowserRouter, Route, Link, Switch,
 } from 'react-router-dom';
 
-import { NavBar } from '../components/NavBar/NavBar';
+import { NavBarR } from '../components/NavBar/NavBar';
 
 const nav: React.ReactNode = (
-  <NavBar mode="horizontal" array={[
+  <NavBarR mode="horizontal" array={[
     {
       url: '/home',
       name: 'home',
