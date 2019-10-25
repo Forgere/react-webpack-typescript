@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.10.2+4.12.15",
+    "antd": "^3.24.2",
     "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
     "loadsh": "^0.0.4",

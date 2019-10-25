@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Button from 'antd/es/button';
+
 import { hot } from 'react-hot-loader/root';
 import {
   BrowserRouter, Route, Link, Switch,
@@ -7,7 +9,8 @@ import {
 const App = () => (
   <div>
     <h2>App</h2>
-    Welcome to your App
+    Welcome to your App1222
+    <Button type="danger">1</Button>
   </div>
 );
 
@@ -34,7 +37,7 @@ class Message extends React.Component {
     return (
       <div>
         <h2>Message</h2>
-        Welcome to your Message
+        Welcome to your Message2
         <Link to="/message/a">a </Link>
         <Link to="/message/b">b </Link>
         <Switch>
@@ -49,6 +52,7 @@ class Message extends React.Component {
 
 const app = () => (
   <BrowserRouter>
+    <Button>2</Button>
     <div>
       <Link to="/about">about </Link>
       <Link to="/inbox">inbox </Link>
