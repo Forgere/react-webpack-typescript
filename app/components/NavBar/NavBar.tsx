@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Button } from 'antd-mobile';
-import 'antd-mobile/lib/button/style'; 
+// import 'antd-mobile/lib/button/style'; 
 
 import { withRouter } from 'react-router-dom';
 

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { AppContainer } from 'react-hot-loader';
 import App from './app/layouts/App.tsx';
+import 'antd-mobile/dist/antd-mobile.css';
 
 require('./app/style.less');
 
