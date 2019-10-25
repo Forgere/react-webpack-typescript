@@ -1,8 +1,12 @@
 {
     "presets": ["@babel/preset-env", "@babel/preset-react"],
-    "plugins": ["react-hot-loader/babel", ["import", {
-        "libraryName": "antd",
-        "style": "css",
-        "libraryDirectory": "es"
-    }]]
+    "plugins": [
+        [
+        "import", {
+            "libraryName": "antd-mobile",
+            "style": true
+            }
+        ],
+        "react-hot-loader/babel"
+    ]
 }

@@ -4,7 +4,7 @@
   "rules": {
     "no-submodule-imports": false,
     "no-any": false,
-    "no-import-side-effect": [true, {"ignore-module": "module-alias|\\.css|\\.less"}],
+    "no-import-side-effect": [true, {"ignore-module": "module-alias|\\.css|\\.less|antd-mobile/lib/*"}],
     "no-relative-imports": false,
     "no-backbone-get-set-outside-model": false,
     "no-single-line-block-comment": false,

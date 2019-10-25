@@ -13,10 +13,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, '../index.html'),
-    // }),
+    // new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '../index.html'),
+    }),
   ],
   optimization: {
     splitChunks: {

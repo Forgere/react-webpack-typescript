@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {Menu} from 'antd';
-import { Link, withRouter } from 'react-router-dom';
 
-const {SubMenu} = Menu;
+import { Button } from 'antd-mobile';
+import 'antd-mobile/lib/button/style'; 
+
+import { withRouter } from 'react-router-dom';
 
 require('./NavBar.less');
 
@@ -30,32 +31,10 @@ export class NavBar extends React.Component<IProps, IState>{
     current: this.props.location.pathname
   }
 
-  loop(array: MenuNode[]): React.ReactNode[]{
-    return array.map(item => {
-      return (
-          item.children && item.children.length > 0
-          ?
-          <SubMenu title={item.name} key={item.url}>
-            {this.loop(item.children)}
-          </SubMenu> 
-          :
-          <Menu.Item key={item.url}>
-            <Link to={item.url}>{item.name}</Link>
-          </Menu.Item>
-      )
-    })
-  }
-
   render() {
     const {array, mode} = this.props;
     return (
-      <Menu onClick={(param) => {
-        this.setState({
-          current: param.key
-        })
-      }} mode={mode} selectedKeys={[this.state.current]}>
-        {array && this.loop(array)}
-      </Menu>
+      <Button type="ghost">Start</Button>
     );
   }
 }
